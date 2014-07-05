@@ -1,0 +1,59 @@
+#!/bin/bash
+EXEC_DIR="/home/bae/portservice"
+EXEC_FILE="$EXEC_DIR/apollo_service"
+_start()
+{
+	echo ">>>>> Starting app_processor <<<<<"
+		$EXEC_FILE -config=$EXEC_DIR/service_config.cfg > $EXEC_DIR/run.log 2>&1 &
+		[ $? -eq 0 ] && {
+			echo ">>>>>> Start app_processor success <<<<<"
+		} || {
+			echo ">>>>>> Start app_processor failed <<<<<"
+		}
+}
+
+_stop() {
+	echo ">>>>> Stopping app_processor <<<<<"
+		killall apollo_service 2>/dev/null
+		sleep 1
+		killall apollo_service 2>/dev/null
+		echo ">>>>>> Stop app_processor success <<<<<"
+}
+
+start()
+{
+	_stop
+		_start
+}
+
+stop()
+{
+	_stop
+}
+
+restart()
+{
+	_stop
+		_start
+}
+
+case C"$1" in
+C)
+echo "Usage: $0 {start|stop|restart}"
+;;
+Cstart)
+start
+echo "Done!"
+;;
+Crestart)
+restart
+echo "Done!"
+;;
+Cstop)
+stop
+echo "Done!"
+;;
+C*)
+echo "Usage: $0 {start|stop|restart}"
+;;
+esac
