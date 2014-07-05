@@ -3,17 +3,17 @@ begin=this is begin
 debug=1
 test_error_code=1402
 
-public_api_port=9090
+public_api_port=1234
 normal_log=../normal.log
 error_log=../error.log
 heart_log=../heart.log
 sch_addr=http://10.81.64.109:8080
-sch_vcode=qew$%^^21i412o3i4u12(*(*(*)(*)*@*)*)*!
+sch_vcode=哈利路亚啪啦啪啦
 bgw_api_addr=http://rms.baidu.com
 db_connect=IOqxziqFXqqS:libTsntPZbKysfmxKldsatPzCgfzxv@tcp(10.81.64.117:4050)/apollo?charset
 
 #send mail host
-mail_host=mail2-in.baidu.com:25
+mail_host=哈利路亚啪啦啪啦
 #which user the mail send from
 mail_from=port_service@baidu.com
 #which user the mail send to
